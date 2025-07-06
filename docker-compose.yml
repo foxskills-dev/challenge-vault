@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  ssh-server:
+    build:
+      dockerfile: Dockerfile.ssh-server
+    
+  runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+          RUNNER_CONFIG: "${RUNNER_CONFIG}"
+    image: ${IMAGE_NAME}
+    command: ${ARGS}

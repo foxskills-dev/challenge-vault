@@ -1,0 +1,5 @@
+app/
+fs_lib/
+__pycache__/
+venv/
+test*.txt

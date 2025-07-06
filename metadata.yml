@@ -1,0 +1,8 @@
+name: Vault
+description: "Create a SSH File Vault"
+difficulty: easy
+thumbnail: vault.png
+tags:
+  - Python
+  - SSH
+  - Crypto

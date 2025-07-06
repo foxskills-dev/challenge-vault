@@ -1,0 +1,16 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y openssh-server && \
+    mkdir /var/run/sshd
+
+RUN useradd -m -s /bin/bash vault
+COPY build/sshkey.pub /home/vault/.ssh/authorized_keys
+RUN chown -R vault:vault /home/vault/.ssh
+RUN chmod 600 /home/vault/.ssh/authorized_keys
+
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd", "-D"]
