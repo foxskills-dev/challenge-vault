@@ -11,7 +11,7 @@ RUN ./base.sh $RUNNER_CONFIG
 
 USER appuser
 
-COPY build/sshkey /home/appuser/.ssh/id_ed25519
+COPY build/sshkey /home/appuser/.ssh/vault_key
 
 WORKDIR /runner
 COPY fs_lib fs_lib
