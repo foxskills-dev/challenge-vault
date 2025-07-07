@@ -10,7 +10,7 @@ RUN chmod +x base.sh
 RUN ./base.sh $RUNNER_CONFIG
 
 COPY build/sshkey /home/appuser/.ssh/vault_key
-RUN chown appuser:appuser /home/appuser/.ssh/vault_key
+RUN chown appuser:appgroup /home/appuser/.ssh/vault_key
 RUN chmod 600 /home/appuser/.ssh/vault_key
 
 USER appuser
