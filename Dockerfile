@@ -12,6 +12,7 @@ RUN ./base.sh $RUNNER_CONFIG
 USER appuser
 
 COPY build/sshkey /home/appuser/.ssh/vault_key
+RUN chmod 600 /home/appuser/.ssh/vault_key
 
 WORKDIR /runner
 COPY fs_lib fs_lib
