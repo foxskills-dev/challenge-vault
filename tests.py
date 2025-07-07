@@ -2,6 +2,7 @@ from fs_lib import test, run
 import os
 
 ssh_server = os.getenv("SSH_SERVER", "vault@ssh-server")
+run("chmod", "+x", "app/vault")
 
 @test("Config SSH Server", score=10)
 def test_config_ssh_server():
